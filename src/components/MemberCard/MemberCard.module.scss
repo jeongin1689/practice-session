@@ -1,0 +1,48 @@
+.card {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0;
+  border: 1px solid #ccc;
+
+  strong {
+    font-size: 20px;
+    color: #000;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #999;
+  }
+  span {
+    display: inline-block;
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+/* 라이트 모드 스타일 */
+.lightCard {
+  background-color: #fff;
+  color: #222;
+
+  strong {
+    color: #000;
+  }
+}
+
+/* 다크 모드 스타일 */
+.darkCard {
+  background-color: #222;
+  color: #f0f0f0;
+
+  &:before {
+    background-color: aquamarine;
+  }
+
+  strong {
+    color: #fff;
+  }
+}
