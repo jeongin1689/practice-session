@@ -26,8 +26,7 @@ if (existsSync(stageDir)) {
 }
 mkdirSync(stageDir)
 
-const publicDir = path.join(stageDir, 'public')
-cpSync(distDir, publicDir, { recursive: true })
+cpSync(distDir, stageDir, { recursive: true })
 const stagedGitlabCi = path.join(stageDir, '.gitlab-ci.yml')
 const stagedReadme = path.join(stageDir, 'README.md')
 
@@ -67,7 +66,7 @@ const deployMessage = customMessage
 publish(
   stageDir,
   {
-    branch: 'master',
+    branch: 'gh-pages',
     message: deployMessage,
     dotfiles: true,
     add: false,
@@ -78,7 +77,7 @@ publish(
       console.error('배포 실패:', error)
       process.exit(1)
     } else {
-      console.log(`배포 완료 (branch: master, message: ${deployMessage})`)
+      console.log(`배포 완료 (branch: gh-pages, message: ${deployMessage})`)
     }
   }
 )
